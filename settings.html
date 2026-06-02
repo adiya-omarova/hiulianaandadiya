@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe6f0, #fff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.box {
+  padding: 30px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 { color: #ff4d88; }
+
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.yes { background: #ff4d88; color: white; }
+.no { background: #ddd; }
+
+/* smooth resize animation */
+#noImage {
+  width: 150px;
+  transition: 0.3s ease;
+  margin-top: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>Hi</h1>
+  <p>I have a gift for you for our 1 month.</p>
+  <p>Do you want to continue?</p>
+
+  <button class="yes" onclick="goYes()">Yes</button>
+  <button class="no" onclick="goNo()">No</button>
+
+  <!-- image that grows when "No" is clicked -->
+  <img id="noImage" src="no.png" alt="no reaction">
+</div>
+
+<script>
+function goYes() {
+  window.location.href = "flowers.html";
+}
+
+function goNo() {
+  let img = document.getElementById("noImage");
+
+  let currentWidth = img.offsetWidth;
+  img.style.width = (currentWidth + 60) + "px";
+}
+</script>
+
+</body>
+</html>
